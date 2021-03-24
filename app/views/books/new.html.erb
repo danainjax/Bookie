@@ -1,0 +1,18 @@
+<%= form_tag books_path do %>
+  <label>Book title:</label><br>
+  <%= text_field_tag :title %><br>
+
+  <label>Author:</label><br>
+  <%= text_field_tag :author %><br>
+
+  <label>Short One-line synopsis:</label><br>
+  <%= text_field_tag :short_synopsis %><br>
+
+<label>Summary:</label><br>
+  <%= text_area_tag :summary %><br>
+
+  <label>Pages:</label><br>
+  <%= text_field_tag :pages%><br>
+
+  <%= submit_tag "Submit Book" %>
+<% end %>
