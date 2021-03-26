@@ -1,18 +1,18 @@
-<%= form_tag books_path do %>
-  <label>Book title:</label><br>
-  <%= text_field_tag :title %><br>
+<%= form_for @book  do |f| %>
+  <%= f.label 'Book title' %><br>
+  <%= f.text_field :title %><br>
 
-  <label>Author:</label><br>
-  <%= text_field_tag :author %><br>
+  <%= f.label 'Author' %><br>
+  <%= f.text_field :author %><br>
 
-  <label>Short One-line synopsis:</label><br>
-  <%= text_field_tag :short_synopsis %><br>
+  <%= f.label 'Short One-line synopsis' %><br>
+  <%= f.text_field :short_synopsis %><br>
 
-<label>Summary:</label><br>
-  <%= text_area_tag :summary %><br>
+  <%= f.label 'Summary' %><br>
+  <%= f.text_area :summary %><br>
 
-  <label>Pages:</label><br>
-  <%= text_field_tag :pages%><br>
+  <%= f.label 'Pages' %><br>
+  <%= f.text_field :pages%><br>
 
-  <%= submit_tag "Submit Book" %>
+  <%= f.submit "Submit Book" %>
 <% end %>

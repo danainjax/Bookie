@@ -9,12 +9,7 @@ def show
 end
 
 def create
-    @reader = Reader.new
-    @reader.title = params[:title]
-    @reader.author = params[:author]
-    @reader.short_synopsis = params[:short_synopsis]
-    @reader.summary = params[:summary]
-    @reader.pages = params[:pages]
+    @reader = Reader.new(reader_params(:username, :first_name, :last_name, :favorite_genre, :favorite_book))
     @reader.save
     redirect_to reader_path(@reader)
 end
@@ -29,11 +24,18 @@ end
 
 def update
     @reader = Reader.find(params[:id])
-    @reader.update(params["reader"])
+    @reader.update(reader_params(:first_name, :last_name, :favorite_genre, :favorite_book))
     redirect_to reader_path(@reader)
 end
 
 def destroy
 end
+
+private
+
+    def reader_params(*args)
+        params.require(:reader).permit(*args)
+            # (:username, :first_name, :last_name, :favorite_genre, :favorite_book)
+    end 
 
 end

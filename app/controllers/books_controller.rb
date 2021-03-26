@@ -9,37 +9,39 @@ class BooksController < ApplicationController
     end
 
     def create
-        @book = Book.new
-        @book.title = params[:title]
-        @book.author = params[:author]
-        @book.short_synopsis = params[:short_synopsis]
-        @book.summary = params[:summary]
-        @book.pages = params[:pages]
+        @book = Book.new(book_params)
         @book.save
         redirect_to book_path(@book)
     end
 
     def index
-        @books = Book.all 
+        if params[:title]
+            @book = Book.where('book LIKE ?', "%#{params[:title]}%")
+        else
+            @book = Book.all
+        end
     end
 
     def edit
-        @book = Book.find(params[:id])
+        @book = Book.find_by_id(params[:id])
     end
 
     def update
-        @book = Book.find(params[:id])
-        @book.update(params["book"])
+        @book = Book.find_by_id(params[:id])
+        @book.update(book_params)
         redirect_to book_path(@book)
     end
 
     def destroy
+
+        @book.destroy
+        redirect_to book_path(@book)
     end
 
-#  private
+ private
 
-#     def book_params
-#         params.require(:book).permit(:title, :author, :short_synopsis, :summary, :pages)
-#     end   
+    def book_params
+        params.require(:book).permit(:title, :author, :short_synopsis, :summary, :pages)
+    end   
 
 end

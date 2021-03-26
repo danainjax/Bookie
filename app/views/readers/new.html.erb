@@ -1,0 +1,18 @@
+<%= form_for @reader  do |f| %>
+  <%= f.label 'Username' %><br>
+  <%= f.text_field :username %><br>
+
+  <%= f.label 'First name' %><br>
+  <%= f.text_field :first_name %><br>
+
+  <%= f.label 'Last name' %><br>
+  <%= f.text_field :last_name %><br>
+
+  <%= f.label 'favorite genre' %><br>
+  <%= f.text_field :favorite_genre %><br>
+
+  <%= f.label 'Favorite Book' %><br>
+  <%= f.text_field :favorite_book%><br>
+
+  <%= f.submit "Create New Reader Profile" %>
+<% end %>
