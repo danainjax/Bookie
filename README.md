@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Objectives
 
-Things you may want to cover:
+1. Build a small Rails project
+2. Be able to create basic models, migrations, controllers, and views
 
-* Ruby version
+## Instructions
 
-* System dependencies
+For this mini project, you'll create a small Rails app. The topic is open-ended. You could build a small recipe app, or a todo list, or even a small blogging platform.
 
-* Configuration
+### Requirements
+- Have at least 3 distinct models
+- There should be at least one many-to-many relationship 
+- Hit at least 1 API
+- Create seed data 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Ultra Bonus
+- Write model tests 
+- Practice refactoring
+- Make it pretty with Bootstrap or Materialize (look into the [Rails Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html))
