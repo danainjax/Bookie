@@ -1,0 +1,17 @@
+<%= form_for @review  do |f| %>
+  <%= f.label 'Star Rating' %><br>
+  <%= f.text_field :star_rating%><br>
+
+  <%= f.label 'Book review:' %><br>
+  <%= f.text_area :book_review %><br>
+
+  <%= f.label 'Book ID:' %><br>
+  <%= f.text_field :book_id %><br>
+
+  <%= f.label 'Reader ID' %><br>
+  <%= f.text_field :reader_id %><br>
+
+  
+
+  <%= f.submit "Create New Review" %>
+<% end %>
