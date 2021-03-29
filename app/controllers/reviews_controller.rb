@@ -33,8 +33,8 @@ class ReviewsController < ApplicationController
     private
     
         def review_params
-            params.require(:review).permit(:star_rating, :book_review, :reader_id, :book_id)
-                # (:username, :first_name, :last_name, :favorite_genre, :favorite_book)
+            params.require(:review).permit(:star_rating, :book_review, :reader_id, :book_id, :id)
+                
         end 
     
     
