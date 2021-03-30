@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
     end
     
     def show
-        @review = Review.find(params[:id])
+        @review = Review.find_by_id(params[:id])
     end
     
     def create
@@ -14,20 +14,22 @@ class ReviewsController < ApplicationController
     end
     
     def index
-        @reviews = review.all 
+        @reviews = Review.all 
     end
     
     def edit
-        @review = Review.find(params[:id])
+        @review = Review.find_by_id(params[:id])
     end
     
     def update
-        @review = Review.find(params[:id])
+        @review = Review.find_by_id(params[:id])
         @review.update(review_params)
         redirect_to review_path(@review)
     end
     
     def destroy
+        @review = Review.find_by_id(params[:id])
+        @review.destroy
     end
     
     private

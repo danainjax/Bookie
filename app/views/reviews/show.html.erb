@@ -1,10 +1,15 @@
 
 <div>
-        <h3>Star Rating: <%= @review.star_rating %></h3>
-        <h3>Title: <%= @review.book.title%></h3>
+        <h2><%= @review.book.title%></h2>
+        <hr />
+        <h4>Star Rating: <%= @review.star_rating %></h4>
 
         <p>Review: <%= @review.book_review %></p><br>
+        <hr />
         By: <%= @review.reader.username %>
         
+        <%= link_to "edit", edit_review_path %><br> 
         
     </div>
+
+    

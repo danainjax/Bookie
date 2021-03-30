@@ -1,15 +1,20 @@
+<h2> Edit Book Review </h2>
+
 <%= form_for @review  do |f| %>
-  <%= f.label 'Star Rating' %><br>
-  <%= f.text_field :star_rating%><br>
+
+  <%= f.label 'Title:' %><br>
+  <%= f.collection_select :book_id, Book.all, :id, :title %><br>
 
   <%= f.label 'Book review:' %><br>
   <%= f.text_area :book_review %><br>
 
-  <%= f.label 'Book ID:' %><br>
-  <%= f.text_field :book_id %><br>
+  <%= f.label 'Star Rating' %><br>
+  <%= f.select :star_rating, [5,4,3,2,1] %><br>
 
-  <%= f.label 'Reader ID' %><br>
-  <%= f.text_field :reader_id %><br>
+  <hr />
+
+  <%= f.label 'Reviewed by:' %><br>
+  <%= f.collection_select :reader_id, Reader.all, :id, :username %><br>
 
   
 
