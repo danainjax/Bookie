@@ -3,9 +3,12 @@
     <div>
         <h2><%= @book.title %></h2>
         <%= @book.author %><br><br>
-        <%= @book.publisher %><br><br>
+        Publisher: <%= @book.publisher %><br><br>
+        Pages: <%= @book.pages %><br> <br>
+        <%= link_to "edit", edit_book_path(@book) %>
+        <hr />
         <%= @book.description %><br><br>
-        Pages: <%= @book.pages %><br> 
-        
+        <hr />
+        <%= link_to "review", new_review_path %>
     </div>
 

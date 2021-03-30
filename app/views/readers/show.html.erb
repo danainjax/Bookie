@@ -1,8 +1,9 @@
 <div>
         <h2><%= @reader.username %></h2>
-        <%= @reader.first_name %>  <%= @reader.last_name %><br><br>
-        <%= @reader.favorite_genre %><br><br>
-        <%= @reader.favorite_book%><br>
-       
+        <%= link_to "edit", edit_reader_path(@reader) %>
+        <hr />
+        Name: <%= @reader.first_name %>  <%= @reader.last_name %><br><br>
+        Favorite Genre: <%= @reader.favorite_genre %><br><br>
+        Favorite Book: <%= @reader.favorite_book%><br>
         
-    </div>
+</div>
