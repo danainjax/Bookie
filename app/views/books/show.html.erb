@@ -9,6 +9,6 @@
         <hr />
         <%= @book.description %><br><br>
         <hr />
-        <%= link_to "review", new_review_path %>
+        <%= link_to "review", new_review_path(@book[:id]) %>
     </div>
 
